@@ -2,7 +2,7 @@ var webpack = require('webpack');
 
 module.exports = {
     entry: [
-        './src/index.jsx'
+        __dirname + '/src/index.jsx'
     ],
     module: {
         loaders: [{
