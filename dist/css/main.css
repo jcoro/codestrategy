@@ -1,0 +1,372 @@
+body {
+    font-family: Inconsolata,Helvetica,sans-serif;
+    height: 100%;
+    font-size: 1.6vw;
+    color: #19ff81;
+    background: #000 -webkit-radial-gradient(#11581e,#041607) repeat;
+    background: #000 -o-radial-gradient(#11581e,#041607) repeat;
+    background: #000 radial-gradient(#11581e,#041607) repeat;
+}
+
+a {
+    color: #19ff81;
+}
+
+header {
+    margin: 25px auto;
+    width: 600px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+header > h1 {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-size: 40px;
+    font-family: 'Inconsolata', Helvetica, sans-serif;
+    color: #19ff81;
+}
+
+header > h1 > a {
+    text-decoration: none;
+}
+
+header > div {
+    margin: 0 20px 0 0;
+}
+
+header > div > a {
+    font-size: 12px;
+    margin-left: 10px;
+}
+
+.outerPanel {
+    width: 900px;
+    margin: 0 auto;
+}
+
+.chooserPanel {
+    width: 350px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.gameData {
+    font-size: 15px;
+}
+
+#colorChooser {
+    display: block;
+    padding: 10px;
+    margin-left: 20px;
+    position: relative;
+    border-radius: 5px;
+    border: 2px solid #19ff81;
+    z-index: 1;
+    cursor: default;
+}
+
+#colorChooser:after, #colorChooser:before {
+    right: 100%;
+    top: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+}
+
+#colorChooser:after {
+    border-color: rgba(0, 0, 0, 0);
+    border-width: 25px;
+    margin-top: -25px;
+}
+#colorChooser:before {
+    border-color: rgba(25, 255, 129, 0);
+    border-right-color: #19ff81;
+    border-width: 29px;
+    margin-top: -29px;
+}
+
+.mainPanel {
+    width: 310px;
+    border-radius: 6px;
+    padding: 20px 0px;
+    display: inline-block;
+    background-color: rgba(100, 100, 100, 0.5);
+    border: 2px solid #ccc;
+}
+
+.homePanel {
+    width: 310px;
+    margin: 0 auto;
+    padding: 20px 0px;
+    background-color: rgba(100, 100, 100, 0.5);
+    border: 2px solid #ccc;
+    color:#041607;
+}
+
+.challengesPanel {
+    width: 250px;
+    margin: 0 auto;
+    padding: 20px 0px;
+    background-color: rgba(100, 100, 100, 0.5);
+    border: 2px solid #ccc;
+}
+
+.challengesBoardPanel {
+    width: 310px;
+    margin: 0 auto;
+    padding: 20px 0px;
+}
+
+.challengesPanel button {
+    color:#041607;
+}
+
+.challengeHeader {
+    text-align: center;
+    padding-bottom:25px;
+}
+
+.row {
+    padding: 10px;
+}
+
+.checkButton {
+    font-size: 75%;
+    box-shadow: 3px 3px 3px #000000;
+    border-radius: 5px;
+    color:#5d5d5d;
+    height: 60px;
+    width: 60px;
+    text-shadow: 0 1px 0 #fff;
+    background-image: -webkit-linear-gradient(top,#fff 0,#e0e0e0 100%);
+    background-image: -o-linear-gradient(top,#fff 0,#e0e0e0 100%);
+    background-image: -webkit-gradient(linear,left top,left bottom,from(#fff),to(#e0e0e0));
+    background-image: linear-gradient(to bottom,#fff 0,#e0e0e0 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffe0e0e0', GradientType=0);
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+    background-repeat: repeat-x;
+    border-color: #dbdbdb;
+}
+
+.hole {
+    margin: 5px;
+    display: inline-block;
+    border: 4px solid #19ff81;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+}
+
+.peg {
+    margin: 5px;
+    display: inline-block;
+    border: 4px solid darkgray;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+}
+
+.holes {
+    display: inline-block;
+    vertical-align: middle;
+    padding-right: 12px;
+}
+
+.small {
+    border-width: 2px;
+    margin-left: 6px;
+    width: 12px;
+    height: 12px;
+    cursor: auto;
+}
+
+.score {
+    border-left: 1px solid lightgray;
+    padding-left: 15px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#dialog {
+    z-index: 2;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 200px;
+    margin-left: -100px;
+    height: 100px;
+    margin-top: -50px;
+    background-color: white;
+    border-radius: 4px;
+    border: 1px solid darkgray;
+    padding: 24px;
+    text-align: center;
+    color: #5d5d5d;
+    box-shadow: 10px 10px 7px 0px #000;
+    user-select:none;
+}
+
+.color {
+    user-select:none;
+    margin: 4px;
+    display: inline-block;
+    border-radius: 50%;
+    width: 33px;
+    height: 33px;
+    cursor: pointer;
+    border: 1px solid #19ff81;
+    box-shadow: 3px 3px 3px #000000;
+    font-size: 9px;
+    line-height: 30px;
+    vertical-align: top;
+    text-align: center;
+}
+
+footer {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin: auto;
+    width: 310px;
+    font-size: 12px;
+    vertical-align: middle;
+    text-align: center;
+}
+
+footer > span {
+    position: relative;
+    top: 3px;
+
+}
+
+footer > a > img {
+    vertical-align: middle;
+    height: 20px;
+}
+
+footer > a {
+    float: right;
+}
+
+table, th, td {
+    padding: 5px 15px;
+}
+
+.chartContainer{
+    display:inline-block;
+    width:200px;
+    vertical-align: top;
+    font-size:12px;
+    padding:0 5px;
+    margin-left:10px;
+    border: 1px solid #19ff81;
+    border-radius:6px;
+}
+.chartRules {
+    padding: 5px 0;
+    border-top:1px solid #19ff81;
+    text-align:center;
+}
+.chartButtonContainer {
+    text-align: center;
+}
+.chartColumn{
+    display: inline-block;
+    vertical-align: top;
+    padding:10px;
+    border-right: 1px solid #19ff81;
+    text-align:center;
+}
+.chartColumn .chartHeader {
+    height:25px;
+}
+.chartColumn .colorReceiver {
+    height:45px;
+    width:45px;
+    border:1px solid #5d5d5d;
+    background-color: #FFFFFF;
+    margin:10px 0;
+}
+.spacer {
+    height:40px;
+}
+.red, .orange, .yellow, .blue, .green, .white, .none {
+    margin: 7px 4px 4px 7px;
+}
+.chartColumn .red{
+    height:25px;
+    width:25px;
+    cursor: pointer;
+    border: 1px solid #19ff81;
+    box-shadow: 3px 3px 3px #000000;
+    border-radius:50%;
+    background-color: #ff0000;
+}
+.chartColumn .orange{
+    height:25px;
+    width:25px;
+    cursor: pointer;
+    border: 1px solid #19ff81;
+    box-shadow: 3px 3px 3px #000000;
+    border-radius:50%;
+    background-color: #ef6c00;
+}
+.chartColumn .yellow{
+    height:25px;
+    width:25px;
+    cursor: pointer;
+    border: 1px solid #19ff81;
+    box-shadow: 3px 3px 3px #000000;
+    border-radius:50%;
+    background-color: yellow;
+}
+.chartColumn .blue{
+     height:25px;
+     width:25px;
+    cursor: pointer;
+    border: 1px solid #19ff81;
+    box-shadow: 3px 3px 3px #000000;
+     border-radius:50%;
+     background-color: blue;
+}
+.chartColumn .green{
+    height:25px;
+    width:25px;
+    cursor: pointer;
+    border: 1px solid #19ff81;
+    box-shadow: 3px 3px 3px #000000;
+    border-radius:50%;
+    background-color: green;
+}
+.chartColumn .white{
+    height:25px;
+    width:25px;
+    cursor: pointer;
+    border: 1px solid #19ff81;
+    box-shadow: 3px 3px 3px #000000;
+    border-radius:50%;
+    background-color: white;
+}
+.chartColumn .none{
+    height:25px;
+    width:25px;
+    cursor: pointer;
+    border-radius:50%;
+}
+button.chartButton {
+    padding:10px;
+    border-radius: 5px;
+    margin: 10px;
+    color:#041607;
+}
+button.chartButton:active{
+    top:3px;
+    position: relative;
+}
+button.chartButton:focus{
+    outline:0;
+}
